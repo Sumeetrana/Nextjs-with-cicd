@@ -16,8 +16,8 @@ jobs:
       - name: Execute remote ssh commands using password
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: 172.31.33.19
+          host: ec2-54-82-139-186.compute-1.amazonaws.com
           username: ubuntu
-          password: ${{ secrets.PRIVATE_SSH_KEY }} # PRIVATE_SSH_KEY, is the keyname which I gave to the ssh key as Repository secrets in the github actions key in the settings tab
+          key: ${{ secrets.PRIVATE_SSH_KEY }} # PRIVATE_SSH_KEY, is the keyname which I gave to the ssh key as Repository secrets in the github actions key in the settings tab
           port: 22
           script: whoami
